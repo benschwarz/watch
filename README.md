@@ -1,8 +1,11 @@
-= watcher
+# Watch, dirt simple mechanism to tell if files have changed
 
-Description goes here.
+Pass Watch a Dir.glob friendly path and a block that you'd like to 
+be executed when something changes
 
-== Note on Patches/Pull Requests
+    Watch.new("**/*") { puts "file added, removed or changed" }
+
+## Note on Patches/Pull Requests
  
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -12,6 +15,6 @@ Description goes here.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2010 Ben Schwarz. See LICENSE for details.
