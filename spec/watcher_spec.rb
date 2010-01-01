@@ -5,9 +5,9 @@ class BlockRun
   end
 end
 
-describe "Watcher" do    
+describe "watch" do    
   before :all do
-    @watcher = Watch.new("tmp/**/*") { BlockRun.call }
+    @watch = Watch.new("tmp/**/*") { BlockRun.call }
   end
   
   it 'should run the block on startup' do
