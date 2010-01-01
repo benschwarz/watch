@@ -26,7 +26,8 @@ Gem::Specification.new do |s|
      "lib/watch.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb",
-     "spec/watcher_spec.rb"
+     "spec/watcher_spec.rb",
+     "watch.gemspec"
   ]
   s.homepage = %q{http://github.com/benschwarz/watch}
   s.rdoc_options = ["--charset=UTF-8"]
