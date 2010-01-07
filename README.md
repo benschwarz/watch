@@ -13,12 +13,12 @@ If you've checked already, there are many implementations of the same kind of co
 [kicker](http://github.com/alloy/kicker/), [watchr](http://github.com/mynyml/watchr/) and [directory_watcher](http://github.com/TwP/directory_watcher/) are all pretty awesome, only the code bases are lengthy.
 
 
-| Library           | LOC      |
-|:-----------------:|:--------:|
-|kicker             | 676      |
-|directory_watcher  | 478      |
-|watchr             | 268      |
-|watch              | 27       |
+    | Library           | SLOC    |
+    |:-----------------:|:--------:|
+    |kicker             | 676      |
+    |directory_watcher  | 478      |
+    |watchr             | 268      |
+    |watch              | 27       |
 
 All three of these libraries of course had far different goals than I did for watch. They're all well tested and pretty awesome too. Use them if watch isn't enough for you.
 
