@@ -1,12 +1,12 @@
 class Watch
-  def initialize(glob, &block)
+  def initialize(glob, prefire: true, &block)
     raise "must pass a block" unless block_given?
 
     @glob = glob
     @block = block
 
     snapshot!
-    @block.call
+    @block.call if prefire
 
     run_loop
   end
