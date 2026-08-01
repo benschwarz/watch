@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "watch"
-    gem.summary = %Q{A simple directory}
+    gem.summary = %Q{A simple directory watcher}
     gem.description = %Q{A dirt simple mechanism to tell if files have changed}
     gem.email = "ben.schwarz@gmail.com"
     gem.homepage = "http://github.com/benschwarz/watch"
