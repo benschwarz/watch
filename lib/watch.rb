@@ -3,9 +3,9 @@ class Watch
     raise "must pass a block" unless block_given?
 
     @glob = glob
-    @timestamps = []
     @block = block
 
+    snapshot!
     @block.call
 
     run_loop
