@@ -1,34 +1,35 @@
 class Watch
   def initialize(glob, &block)
     raise "must pass a block" unless block_given?
-    
-    @path = glob
-    @files = []
+
+    @glob = glob
+    @timestamps = []
     @block = block
-    
+
     @block.call
-    
+
     run_loop
   end
-  
+
   private
+
   def run_loop
     loop do
-      @block.call if changed?    
-      setup
+      @block.call if changes?
+      snapshot!
       sleep 0.5
     end
   end
-  
-  def changed?
-    file_list != @files
+
+  def changes?
+    @timestamps != timestamps
   end
-  
-  def setup
-    @files = file_list
+
+  def snapshot!
+    @timestamps = timestamps
   end
-  
-  def file_list
-    Dir[@path].map {|file| File.mtime(file) }
+
+  def timestamps
+    Dir[@glob].map { |file| File.mtime(file) }
   end
 end
