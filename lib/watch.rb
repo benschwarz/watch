@@ -1,8 +1,9 @@
 class Watch
-  def initialize(glob, prefire: true, &block)
+  def initialize(glob, prefire: true, wait: 0.5, &block)
     raise "must pass a block" unless block_given?
 
     @glob = glob
+    @wait = wait
     @block = block
 
     snapshot!
@@ -17,7 +18,7 @@ class Watch
     loop do
       @block.call if changes?
       snapshot!
-      sleep 0.5
+      sleep @wait
     end
   end
 
