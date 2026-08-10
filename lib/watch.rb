@@ -16,8 +16,11 @@ class Watch
 
   def run_loop
     loop do
-      @block.call if changes?
-      snapshot!
+      if changes?
+        @block.call
+        snapshot!
+      end
+
       sleep @wait
     end
   end
@@ -31,6 +34,10 @@ class Watch
   end
 
   def timestamps
-    Dir[@glob].map { |file| File.mtime(file) }
+    Dir[@glob].map do |file|
+      File.mtime(file)
+    rescue Errno::ENOENT
+      nil
+    end
   end
 end

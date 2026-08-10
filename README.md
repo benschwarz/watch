@@ -5,6 +5,17 @@ be executed when something changes
 
     Watch.new("**/*") { puts "file added, removed or changed" }
 
+### Options
+
+`prefire` (default `true`) runs the block once at startup, before anything has
+changed. Pass `false` to only run it on an actual change.
+
+    Watch.new("**/*", prefire: false) { puts "something changed" }
+
+`wait` (default `0.5`) is the number of seconds to sleep between checks.
+
+    Watch.new("**/*", wait: 2) { puts "checked every two seconds" }
+
 ## Why write another directory watcher? 
 
 Simplicity.
@@ -18,7 +29,7 @@ If you've checked already, there are many implementations of the same kind of co
     |kicker             | 676      |
     |directory_watcher  | 478      |
     |watchr             | 268      |
-    |watch              | 27       |
+    |watch              | 34       |
 
 All three of these libraries of course had far different goals than I did for watch. They're all well tested and pretty awesome too. Use them if watch isn't enough for you.
 
